@@ -52,13 +52,13 @@ function createRandom(lower, upper){
 
 Date.prototype.Format = function (fmt) { 
     var o = {
-        "M+": this.getMonth() + 1, //月份 
-        "d+": this.getDate(), //日 
-        "h+": this.getHours(), //小时 
-        "m+": this.getMinutes(), //分 
-        "s+": this.getSeconds(), //秒 
-        "q+": Math.floor((this.getMonth() + 3) / 3), //季度 
-        "S": this.getMilliseconds() //毫秒 
+        "M+": this.getMonth() + 1, // month
+        "d+": this.getDate(), // day 
+        "h+": this.getHours(), // hour 
+        "m+": this.getMinutes(), // minute
+        "s+": this.getSeconds(), // second 
+        "q+": Math.floor((this.getMonth() + 3) / 3), // quarter 
+        "S": this.getMilliseconds() // millisecond
     };
     if (/(y+)/.test(fmt)){
 	 	fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
