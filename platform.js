@@ -9,9 +9,9 @@ client.on('connect', function(){
 });	
 
 client.on('message', function(topic, message){
-	// message为Buffer
+	// message is Buffer
 	var str = message.toString();
-	// 将str拆分成指定格式，分别提取出相应数值
+	// extract the values from str based on corresponding format
 	var perfArr = str.split("&&");
 	// console.log(perfArr);
 	var cmdArr = [];
@@ -29,7 +29,7 @@ client.on('message', function(topic, message){
 		// console.log('---------------------------');
 	});
 	var cmdstr = cmdArr.join(" ");
-	// console.log('====控制命令====', cmdstr);
+	// console.log('====control command:====', cmdstr);
 	client.publish('/control', cmdstr);
 });
 
@@ -38,11 +38,11 @@ function getCmdControl(value, index){
 	var limitArr = getLimitByType(index);
 	var perf = getNameByIndex(index);
 	if(value < limitArr[0]){
-		cmd = ' 低于下限' + limitArr[1];
+		cmd = ' lower than ' + limitArr[1];
 	}else if(value <= limitArr[1]){
-		cmd = ' 正常';
+		cmd = ' normal;
 	}else{
-		cmd = ' 高于上限' + limitArr[1];
+		cmd = ' higher than ' + limitArr[1];
 	}
 	return perf + ':' + value + cmd;	
 }
@@ -62,11 +62,11 @@ function getLimitByType(index){
 function getNameByIndex(index){
 	var name = '';
 	if(index == 1){
-		name = '温度';
+		name = 'Temperture';
 	}else if(index == 2){
-		name = '电流';
+		name = 'current';
 	}else{
-		name = '电压';
+		name = 'voltage';
 	}
 	return name;
 }
