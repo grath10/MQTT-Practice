@@ -40,7 +40,7 @@ function getCmdControl(value, index){
 	if(value < limitArr[0]){
 		cmd = ' lower than ' + limitArr[1];
 	}else if(value <= limitArr[1]){
-		cmd = ' normal;
+		cmd = ' normal';
 	}else{
 		cmd = ' higher than ' + limitArr[1];
 	}
