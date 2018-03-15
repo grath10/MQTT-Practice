@@ -16,5 +16,6 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+*.iml
 
 package-lock.json
