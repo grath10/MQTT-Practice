@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+</head>
+<body>
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#broadcastModal">广播消息</button>
+<input type="button" class="btn btn-default" data-toggle="modal" data-target="#controlModal" value="反向控制" />
+<div class="modal fade" id="broadcastModal" tabindex="-1" role="dialog" aria-labelledby="broadcastModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">消息编辑窗口</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group" style="margin-bottom: 0">
+                        <textarea class="form-control" rows="4" id="msgContent"></textarea>
+                        <label for="msg-tip">长度不超过1000个字符</label>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="sendMsg()">广播</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="controlModal" tabindex="-1" role="dialog" aria-labelledby="controlModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">控制命令窗口</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form">
+                    <div class="form-group" style="margin-bottom: 0">
+                        <input class="form-control" id="cmd-content"></input>
+                        <select class="form-control" id="sensorId" style="margin-top: 6px">
+                            <option value="61780001">61780001</option>
+                            <option value="61780002">61780002</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" onclick="sendFeedback()">下发</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<!--<script src="/javascripts/browserMqtt.js"></script>-->
+<script src="/javascripts/buffer-browserify.js"></script>
+<script src="/javascripts/mqtt.js"></script>
+<script src="/javascripts/main.js"></script>
+</html>

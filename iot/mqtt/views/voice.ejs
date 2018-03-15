@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <form method="post" action="/sendVoice">
+		<label>输入文本:</label>
+		<textarea name="text" cols="100" rows="5"></textarea>
+		<input type="submit" value="发送" />
+	</form>
+	<div><%= message %></div>
+  </body>
+</html>

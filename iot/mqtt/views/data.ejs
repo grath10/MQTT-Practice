@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+	<table class="table-border" cellspacing="0">
+		<thead>
+			<tr>
+				<td class="text-center">采集时间</td>
+				<td class="text-center">温度(℃)</td>
+				<td class="text-center">电流(mA)</td>
+				<td class="text-center">电压(V)</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% for(var j = 0;j < data.length;j++) {%>
+				<tr>
+					<% for(var index = 0;index < data[j].length;index++) { %>
+						<td class="text-center"><%= data[j][index] %></td>
+					<% } %> 
+				</tr>
+			<% } %>
+		</tbody>
+	</table>
+  </body>
+</html>
