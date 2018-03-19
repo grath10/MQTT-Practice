@@ -1,2 +1,8 @@
 # MQTT-Practice
-based on node.js
+Based on NodeJs
+
+dependencies:
+
+Mosca   -- serve as a broker
+
+Mqtt.js   -- serve as a client
